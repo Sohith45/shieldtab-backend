@@ -1,0 +1,7 @@
+Using device: cpu
+Loading dataset...
+Added 9360 oversampled benign-with-params rows
+Training for 3 epochs on 561468 samples...
+  epoch 1 batch 0/1097 loss=0.7572
+  epoch 1 batch 200/1097 loss=0.2606
+  epoch 1 batch 400/1097 loss=0.1711

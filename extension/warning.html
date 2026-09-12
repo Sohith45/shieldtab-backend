@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Site Blocked - ShieldTab</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+    background: #b71c1c;
+    color: #fff;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+  }
+  .card {
+    background: #ffffff;
+    color: #202124;
+    max-width: 560px;
+    width: 100%;
+    border-radius: 12px;
+    padding: 40px 36px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.25);
+  }
+  .icon { font-size: 56px; text-align: center; margin-bottom: 8px; }
+  h1 { font-size: 22px; text-align: center; color: #b71c1c; margin-bottom: 16px; }
+  p { line-height: 1.55; margin-bottom: 14px; color: #3c4043; font-size: 14px; }
+  .url-box {
+    background: #f1f3f4;
+    border-radius: 6px;
+    padding: 10px 14px;
+    font-family: monospace;
+    font-size: 13px;
+    word-break: break-all;
+    margin-bottom: 16px;
+    color: #202124;
+  }
+  .details {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+  }
+  .badge {
+    background: #fce8e6;
+    color: #b71c1c;
+    padding: 6px 12px;
+    border-radius: 16px;
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: capitalize;
+  }
+  .confidence {
+    background: #f1f3f4;
+    color: #3c4043;
+    padding: 6px 12px;
+    border-radius: 16px;
+    font-size: 13px;
+  }
+  .actions { display: flex; gap: 12px; margin-top: 24px; flex-wrap: wrap; }
+  button {
+    flex: 1;
+    min-width: 160px;
+    padding: 12px 18px;
+    border-radius: 6px;
+    border: none;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  .btn-safe {
+    background: #1a73e8;
+    color: white;
+  }
+  .btn-safe:hover { background: #1765cc; }
+  .btn-proceed {
+    background: transparent;
+    color: #5f6368;
+    border: 1px solid #dadce0;
+  }
+  .btn-proceed:hover { background: #f1f3f4; }
+  .footer-note {
+    margin-top: 20px;
+    font-size: 12px;
+    color: #80868b;
+    text-align: center;
+  }
+  .explain-section {
+    margin-top: 18px;
+    border-top: 1px solid #f1f3f4;
+    padding-top: 14px;
+  }
+  .btn-link {
+    background: none;
+    border: none;
+    color: #1a73e8;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 0;
+    width: auto;
+    flex: none;
+  }
+  .btn-link:hover { text-decoration: underline; }
+  .explain-content {
+    margin-top: 12px;
+    font-size: 13px;
+    color: #3c4043;
+    line-height: 1.5;
+  }
+  .explain-content .loading { color: #80868b; font-style: italic; }
+  .similar-item {
+    background: #f8f9fa;
+    border-radius: 6px;
+    padding: 8px 10px;
+    margin-top: 8px;
+    font-family: monospace;
+    font-size: 11px;
+    word-break: break-all;
+    color: #5f6368;
+  }
+  .similar-item .sim-badge {
+    display: inline-block;
+    background: #e8eaed;
+    color: #3c4043;
+    font-family: -apple-system, sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    padding: 1px 6px;
+    border-radius: 10px;
+    margin-bottom: 4px;
+  }
+</style>
+</head>
+<body>
+  <div class="card">
+    <div class="icon">⚠️</div>
+    <h1>This site has been blocked — Malicious URL Detected</h1>
+    <p>ShieldTab flagged this page as unsafe before it loaded. Proceeding anyway may put your personal information, credentials, or device at risk.</p>
+
+    <div class="url-box" id="urlBox">—</div>
+
+    <div class="details">
+      <span class="badge" id="threatType">—</span>
+      <span class="confidence" id="confidenceBadge">—</span>
+    </div>
+
+    <div class="actions">
+      <button class="btn-safe" id="goBackBtn">Go back to safety</button>
+      <button class="btn-proceed" id="proceedBtn">Proceed anyway (not recommended)</button>
+    </div>
+
+    <div class="explain-section" id="explainSection">
+      <button class="btn-link" id="explainBtn">Why was this flagged?</button>
+      <div class="explain-content" id="explainContent" style="display:none;"></div>
+    </div>
+
+    <div class="footer-note">Blocked by ShieldTab — real-time malicious URL detection.</div>
+  </div>
+
+  <script src="config.js"></script>
+  <script src="warning.js"></script>
+</body>
+</html>

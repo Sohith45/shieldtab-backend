@@ -1,0 +1,59 @@
+Loading dataset...
+651191 rows loaded
+Added 9360 oversampled benign-with-params rows (156 unique x60). New total: 660551
+Classes: ['benign', 'defacement', 'malware', 'phishing']
+Extracting features (this takes a few minutes on 650k rows)...
+  0/660551  (0s)
+  100000/660551  (4s)
+  200000/660551  (8s)
+  300000/660551  (11s)
+  400000/660551  (15s)
+  500000/660551  (19s)
+  600000/660551  (23s)
+Feature extraction done in 31s
+Training binary (malicious vs benign) model...
+
+--- Binary classification report ---
+              precision    recall  f1-score   support
+
+      benign       0.93      0.96      0.94     65620
+   malicious       0.91      0.87      0.89     33463
+
+    accuracy                           0.93     99083
+   macro avg       0.92      0.91      0.92     99083
+weighted avg       0.93      0.93      0.93     99083
+
+ROC-AUC: 0.9750844227384916
+Confusion matrix:
+ [[62778  2842]
+ [ 4478 28985]]
+
+Training multiclass (threat-type) model...
+
+--- Multiclass classification report ---
+              precision    recall  f1-score   support
+
+      benign       0.93      0.97      0.95     65620
+  defacement       0.92      0.89      0.90     14380
+     malware       0.99      0.92      0.95      4894
+    phishing       0.84      0.74      0.78     14189
+
+    accuracy                           0.92     99083
+   macro avg       0.92      0.88      0.90     99083
+weighted avg       0.92      0.92      0.92     99083
+
+
+Saved xgb_binary.json, xgb_multiclass.json, label_encoder.joblib
+
+Top 10 features (binary model):
+num_params               0.135517
+num_dots                 0.127130
+has_ip                   0.118612
+num_subdomains           0.065951
+tld_length               0.060457
+path_length              0.057615
+suspicious_word_count    0.040347
+num_equal_signs          0.040162
+num_underscores          0.039055
+num_ampersands           0.038619
+dtype: float32

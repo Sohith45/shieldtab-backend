@@ -1,0 +1,8 @@
+fastapi==0.141.1
+uvicorn[standard]==0.52.4
+xgboost==3.4.1
+scikit-learn==1.8.0
+joblib>=1.4.2
+onnxruntime==1.24.4
+numpy>=1.26.4
+pydantic>=2.9.2
