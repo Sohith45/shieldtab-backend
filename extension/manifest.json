@@ -12,6 +12,7 @@
     "http://localhost:8000/*",
     "http://127.0.0.1:8000/*",
     "https://*.hf.space/*",
+    "https://*.onrender.com/*",
     "<all_urls>"
   ],
   "background": {
